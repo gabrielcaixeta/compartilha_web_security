@@ -1,0 +1,154 @@
+*{margin:0;}
+
+#header{
+	height:110px;
+	background-color:#000;
+	box-shadow: #999 0px 0px 30px;
+	color:#fff;
+	display:block;
+}
+
+
+#logo{
+	height: 50px;
+	width:230px;
+	border-bottom:2px solid #CCC;
+	font-size:35px;
+	padding: 10px;
+         border-bottom-right-radius:30px;
+	box-shadow: #999 -10px 3px 5px;
+	position:relative;	
+	top:15px;	
+}
+
+#autentica{
+	float:right;
+	padding: 0 10px 0 10px;
+        margin-right: 15px;
+}
+#autentica a{
+    color:#ccc;
+    font-weight: bold;
+}
+
+#plogin{
+    width: 320px;
+    display: block;
+    text-align: center;
+    margin:41px auto;
+    padding: 15px;
+    box-shadow:0px 0px 15px 15px #fefefe inset;
+    border-bottom:2px solid #444;
+    border-bottom-right-radius: 60px; 
+    background-color: #f8f8f8;
+    
+    
+}
+
+#content{
+	display:block;
+	min-height:200px;
+}
+#contet-wrap{
+    margin: 0 auto;
+    display: block;
+    width: 600px;
+
+    margin-bottom: 30px;
+}
+#footer{
+	height:120px;
+	background-color:#333;
+	box-shadow: #999 0px 0px 30px;
+	color:#fff;
+	display:block;
+        text-align: center;
+        padding: 15px;
+}
+
+.btn{
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    background-color: #ccc;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.btn:hover{
+    background-color: #777;
+    color:#fff;
+}
+
+/*****************************  MENU   *********************************************/
+
+#menu{
+        height:45px;
+	background-color:#752f0a;
+	box-shadow: #999 0px 0px 15px;
+	color:#fff;
+	display:block;
+        text-align: center;
+        text-transform: uppercase;    
+        padding: 0px 10px;
+        border-bottom: 8px solid #000;
+}
+
+
+#menu > a{
+	margin: auto;
+	border-bottom-right-radius:30px;
+	color:#ccc;
+	background-color: #752f0a;	
+	padding:12px 48px;
+	display: block;
+	float: left;
+	text-decoration: none;
+}
+
+#menu > a:hover{
+        box-shadow:0px 0px 30px #000;
+	color: #444;
+	background-color:  #b4491f;
+}
+
+/********************   CLASSES     **************/
+.linhapar {
+	background-color:#ddd;
+}
+
+.linhaimpar {
+	background-color:#aaa;
+}
+
+.titulo {
+	background-color:#000;
+	color:#FFF;
+	text-align:left;
+}
+
+.linhaimpar >td, .linhapar >td{
+    padding: 5px 20px;
+}
+
+.titulo > th{
+    padding: 10px;
+    text-align: center;
+}
+
+#contet-wrap table{
+    margin: auto;
+    width: 100%
+}
+
+/************** TAGS    ****************/
+
+#contet-wrap h1{
+	border-bottom:2px solid #752f0a;
+	padding: 2px;
+        border-bottom-right-radius:30px;
+	margin-bottom: 10px;
+        text-shadow: #ccc 0px 0px 5px;
+	
+
+}

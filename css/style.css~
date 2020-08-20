@@ -1,0 +1,41 @@
+*{margin:0;}
+
+#header{
+	height:150px;
+	background-color:#000;
+	box-shadow: #999 0px 0px 30px;
+	color:#fff;
+	display:block;
+}
+
+
+
+#logo{
+	height: 50px;
+	width:230px;
+	border-bottom:2px solid #CCC;
+	font-size:35px;
+	padding: 10px;
+   border-bottom-right-radius:30px;
+	box-shadow: #999 -10px 3px 5px;
+	position:relative;	
+	top:15px;	
+}
+
+#login{
+	float:right;
+	padding: 0 10 0 10px;
+}
+
+#content{
+	display:block;
+	min-height:200px;
+}
+
+#footer{
+	height:150px;
+	background-color:#666;
+	box-shadow: #999 0px 0px 30px;
+	color:#fff;
+	display:block;
+}

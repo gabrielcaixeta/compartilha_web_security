@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Compartilha</title>
+		<link href="css/style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+			<div id="header">
+				<div id="logo">
+					Compartilha
+				</div>
+					<div id="login">
+					Login
+				</div>
+			</div>
+
+			<div id="footer">
+					Login
+				</div>
+	</body>
+</html>
