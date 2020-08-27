@@ -3,7 +3,7 @@ if (isset($_POST['Entrar'])) {
   if (!empty($_POST['login']) && !empty($_POST['senha'])) {
     $login = addslashes($_POST['login']);
     $senha = addslashes($_POST['senha']); // trata SQL Injection
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/control/usuario/lista.php');
+    require_once '/control/usuario/lista.php';
 
     $controller = new UsuarioController();
     $usuario = $controller->autentica($login, $senha);
