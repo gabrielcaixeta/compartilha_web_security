@@ -1,26 +1,41 @@
 ﻿<?php
+require_once 'sec/CSRFToken.php';
+
 if (isset($_POST['Entrar'])) {
-  if (!empty($_POST['login']) && !empty($_POST['senha'])) {
-    $login = addslashes($_POST['login']);
-    $senha = addslashes($_POST['senha']); // trata SQL Injection
-    require_once './control/usuario/lista.php';
 
-    $controller = new UsuarioController();
-    $usuario = $controller->autentica($login, $senha);
+  if (isset($_POST['csrf_token'])) {
 
-    if ($usuario->getNome() != '') //por questão de segurança verifica se foi inserido apenas um registro
-    {
-      session_start();
-      $_SESSION['idUsuario'] = $usuario->getIdUsuario();
-      $_SESSION['usuario'] = $usuario->getNome();
-      $_SESSION['inicio'] = time();
-      header('location: /area_restrita.php');
+    if (CSRFToken::validate($_POST['csrf_token'])) {
+      if (!empty($_POST['login']) && !empty($_POST['senha'])) {
+        $login = addslashes($_POST['login']);
+        $senha = addslashes($_POST['senha']); // trata SQL Injection
+        require_once './control/usuario/lista.php';
+
+        $controller = new UsuarioController();
+        $usuario = $controller->autentica($login, $senha);
+
+        if ($usuario->getNome() != '') //por questão de segurança verifica se foi inserido apenas um registro
+        {
+          session_start();
+          $_SESSION['idUsuario'] = $usuario->getIdUsuario();
+          $_SESSION['usuario'] = $usuario->getNome();
+          $_SESSION['inicio'] = time();
+          header('location: /area_restrita.php');
+        } else {
+
+          $erro = 1;
+        }
+      }
     } else {
-
-      $erro = 1;
+      // Token inválido (ausente, expirado ou reutilizado)
+      die("Erro: CSRF Token inválido. Requisição bloqueada.");
     }
+  } else {
+    die("Erro: CSRF Token ausente.");
   }
 }
+
+$csrf_token = CSRFToken::generate();
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -59,6 +74,7 @@ if (isset($_POST['Entrar'])) {
       ?>
       <h2>Entre e Compartilhe!</h2>
       <form name="autentica" method="post" action="">
+        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
         <table width="200" border="0">
           <tr>
             <td></td>
