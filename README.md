@@ -14,5 +14,5 @@ Entre no diretório `documentacao` e importe os scripts `script_db.sql` para cri
 ```bash
 cd documentacao
 mysql -uroot -p < script_db.sql
-mysql -uroot -p < teste.sql
+mysql -uroot -p compartilha < teste.sql
 ```
