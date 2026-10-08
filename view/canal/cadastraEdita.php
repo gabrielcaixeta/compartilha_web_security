@@ -19,7 +19,7 @@ if (isset($_GET['idCanal'])) {
 
 <h2><?php echo $acao; ?> de Canal</h2>
 
-<form name="cadastraEdita" action="control/canal/cadastraEdita.php" method="post">
+<form name="cadastraEdita" action="area_restrita.php?pg=control/canal/cadastraEdita" method="post">
   <input type="hidden" name="idCanal" value="<?php echo $idCanal; ?>" />
   <table width="458" border="0">
     <?php

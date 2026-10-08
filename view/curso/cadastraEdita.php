@@ -20,7 +20,7 @@ if (isset($_GET['idCurso'])) {
 
 <h2><?php echo $acao; ?> de Curso</h2>
 
-<form name="cadastraEdita" action="control/curso/cadastraEdita.php" method="post">
+<form name="cadastraEdita" action="area_restrita.php?pg=control/curso/cadastraEdita" method="post">
   <input type="hidden" name="idCurso" value="<?php echo $idCurso; ?>" />
   <table width="458" border="0">
     <?php
