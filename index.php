@@ -14,7 +14,7 @@ if (isset($_POST['Entrar'])) {
       $_SESSION['idUsuario'] = $usuario->getIdUsuario();
       $_SESSION['usuario'] = $usuario->getNome();
       $_SESSION['inicio'] = time();
-      header('location: /area_restrita.php');
+      header('location: area_restrita.php');
     } else {
 
       $erro = 1;

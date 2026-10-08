@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/conexao/Conexao.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/model/class/UsuarioCurso.php');
+require_once dirname(__DIR__, 2) . '/conexao/Conexao.php';
+require_once dirname(__DIR__, 2) . '/model/class/UsuarioCurso.php';
 
 class DalUsuarioCurso
 {

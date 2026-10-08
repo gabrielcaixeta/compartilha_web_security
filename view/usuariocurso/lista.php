@@ -8,9 +8,9 @@
             <th colspan="2">Ações</th>
         </tr>
         <?php
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/control/curso/lista.php');
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/control/canal/lista.php');
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/control/usuariocurso/lista.php');
+        require_once dirname(__DIR__, 2) . '/control/curso/lista.php';
+        require_once dirname(__DIR__, 2) . '/control/canal/lista.php';
+        require_once dirname(__DIR__, 2) . '/control/usuariocurso/lista.php';
 
         $idUsuario = $_SESSION['idUsuario'];
         $usuariocurso = new UsuarioCursoController();

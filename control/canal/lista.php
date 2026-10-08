@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/model/dal/Canal.php');
+require_once dirname(__DIR__, 2) . '/model/dal/Canal.php';
 class CanalController
 {
     public function selecionaCanais()

@@ -4,7 +4,7 @@
 $idCanal = $descricao = '';
 $acao = 'Cadastro';
 if (isset($_GET['idCanal'])) {
-  require_once($_SERVER['DOCUMENT_ROOT'] . '/control/canal/lista.php');
+  require_once dirname(__DIR__, 2) . '/control/canal/lista.php';
   $acao = 'Edição';
   $idCanal = $_GET['idCanal'];
 

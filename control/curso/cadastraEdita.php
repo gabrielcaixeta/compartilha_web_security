@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/model/dal/Curso.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/model/class/Curso.php');
+require_once dirname(__DIR__, 2) . '/model/dal/Curso.php';
+require_once dirname(__DIR__, 2) . '/model/class/Curso.php';
 
 $idCurso = $_POST['idCurso'];
 $descricao = $_POST['txtCurso'];
@@ -19,4 +19,4 @@ if (empty($idCurso)) {
     $dalCurso->atualiza($curso);
 }
 
-header('location: /area_restrita.php?pg=view/curso/lista');
+header('location: ../../area_restrita.php?pg=view/curso/lista');

@@ -4,7 +4,7 @@
 $idCurso = $descricao = $idCanal = '';
 $acao = 'Cadastro';
 if (isset($_GET['idCurso'])) {
-  require_once($_SERVER['DOCUMENT_ROOT'] . '/control/curso/lista.php');
+  require_once dirname(__DIR__, 2) . '/control/curso/lista.php';
   $acao = 'Edição';
   $idCurso = $_GET['idCurso'];
 
@@ -40,7 +40,7 @@ if (isset($_GET['idCurso'])) {
       <td>
         <select name="txtCanal" id="txtCanal">
           <?php
-          require_once($_SERVER['DOCUMENT_ROOT'] . '/control/canal/lista.php');
+          require_once dirname(__DIR__, 2) . '/control/canal/lista.php';
           $dal = new DalCanal();
           $res = $dal->selecionaCanais();
           while ($canal = mysqli_fetch_object($res)) {

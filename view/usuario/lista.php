@@ -17,7 +17,7 @@
                 <th>Passwd</th>
             </tr>
             <?php
-            require_once('/control/usuario/lista.php');
+            require_once dirname(__DIR__, 2) . '/control/usuario/lista.php';
             $usuario = new UsuarioController();
             $res = $usuario->listaUsuarios();
 

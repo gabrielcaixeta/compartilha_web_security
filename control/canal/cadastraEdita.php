@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/model/dal/Canal.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/model/class/Canal.php');
+require_once dirname(__DIR__, 2) . '/model/dal/Canal.php';
+require_once dirname(__DIR__, 2) . '/model/class/Canal.php';
 
 $idCanal = $_POST['idCanal'];
 $descricao = $_POST['txtCanal'];
@@ -15,4 +15,4 @@ if (empty($idCanal)) {
     $dalCanal->atualiza($canal);
 }
 
-header('location: /area_restrita.php?pg=view/canal/lista');
+header('location: ../../area_restrita.php?pg=view/canal/lista');
