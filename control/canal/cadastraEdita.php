@@ -15,4 +15,4 @@ if (empty($idCanal)) {
     $dalCanal->atualiza($canal);
 }
 
-header('location: ../../area_restrita.php?pg=view/canal/lista');
+header('location: area_restrita.php?pg=view/canal/lista');

@@ -9,4 +9,4 @@ $dal = new DalUsuarioCurso();
 $curso = $dal->selecionaCursoUsuario($idUsuario, $idCurso);
 $dal->exclui($curso);
 
-header('location: ../../area_restrita.php?pg=view/usuariocurso/lista');
+header('location: area_restrita.php?pg=view/usuariocurso/lista');

@@ -10,4 +10,4 @@ $dal = new DalCanal();
 $canal = $dal->selecionaCanalPorId($idCanal);
 $dal->exclui($canal);
 
-header('location: ../../area_restrita.php?pg=view/canal/lista');
+header('location: area_restrita.php?pg=view/canal/lista');

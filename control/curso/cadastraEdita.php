@@ -19,4 +19,4 @@ if (empty($idCurso)) {
     $dalCurso->atualiza($curso);
 }
 
-header('location: ../../area_restrita.php?pg=view/curso/lista');
+header('location: area_restrita.php?pg=view/curso/lista');

@@ -14,4 +14,4 @@ $cursoUsuario->setIdCurso($idCurso);
 $dalUsuarioCurso->insere($cursoUsuario);
 
 
-header('location: ../../area_restrita.php?pg=view/usuariocurso/lista');
+header('location: area_restrita.php?pg=view/usuariocurso/lista');

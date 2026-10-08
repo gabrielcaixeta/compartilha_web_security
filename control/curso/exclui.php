@@ -10,4 +10,4 @@ $dal = new DalCurso();
 $curso = $dal->selecionaCursoPorId($idCurso);
 $dal->exclui($curso);
 
-header('location: ../../area_restrita.php?pg=view/curso/lista');
+header('location: area_restrita.php?pg=view/curso/lista');
