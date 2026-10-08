@@ -18,7 +18,7 @@ COLLATE = utf8_general_ci;
 
 CREATE  TABLE IF NOT EXISTS `compartilha`.`canal` (
   `idCanal` INT(11) NOT NULL AUTO_INCREMENT ,
-  `descricao` VARCHAR(45) NULL DEFAULT NULL ,
+  `descricao` VARCHAR(255) NULL DEFAULT NULL ,
   PRIMARY KEY (`idCanal`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
@@ -26,7 +26,7 @@ COLLATE = utf8_general_ci;
 
 CREATE  TABLE IF NOT EXISTS `compartilha`.`curso` (
   `idCurso` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `descricao` VARCHAR(45) NULL DEFAULT NULL ,
+  `descricao` VARCHAR(255) NULL DEFAULT NULL ,
   `idCanal` INT(11) NOT NULL ,
   PRIMARY KEY (`idCurso`) ,
   INDEX `fk_Curso_Canal_idx` (`idCanal` ASC) ,
