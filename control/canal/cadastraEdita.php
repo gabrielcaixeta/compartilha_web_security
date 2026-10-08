@@ -10,7 +10,6 @@ $canal->setDescricao($descricao);
 if (empty($idCanal)) {
     $dalCanal->insere($canal);
 } else {
-    echo $canal->getDescricao();
     $canal->setIdCanal($idCanal);
     $dalCanal->atualiza($canal);
 }
