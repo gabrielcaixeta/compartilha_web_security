@@ -18,14 +18,14 @@ class DalCanal
 
     public function selecionaCanais()
     {
-        $sql = "SELECT * FROM Canal";
+        $sql = "SELECT * FROM canal";
         $res = $this->conexao->query($sql);
         return $res;
     }
 
     public function selecionaCanalPorId($idCanal)
     {
-        $sql = 'SELECT * FROM Canal WHERE idCanal =' . $idCanal;
+        $sql = 'SELECT * FROM canal WHERE idCanal =' . $idCanal;
         $res = $this->conexao->query($sql);
 
         $canal = new Canal();
@@ -38,14 +38,14 @@ class DalCanal
 
     public function insere($canal)
     {
-        $sql = "INSERT INTO Canal (descricao) VALUES('";
+        $sql = "INSERT INTO canal (descricao) VALUES('";
         $sql = $sql . $canal->getDescricao() . "');";
         $this->conexao->query($sql);
     }
 
     public function atualiza($canal)
     {
-        $sql = "UPDATE Canal SET ";
+        $sql = "UPDATE canal SET ";
         $sql = $sql . "descricao = '" . $canal->getDescricao() . "' ";
         $sql = $sql . "WHERE idCanal = " . $canal->getIdCanal();
         $this->conexao->query($sql);
@@ -53,7 +53,7 @@ class DalCanal
 
     public function exclui($canal)
     {
-        $sql = "DELETE FROM Canal ";
+        $sql = "DELETE FROM canal ";
         $sql = $sql . "WHERE idCanal = " . $canal->getIdCanal();
         $this->conexao->query($sql);
     }

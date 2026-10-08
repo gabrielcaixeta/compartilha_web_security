@@ -18,14 +18,14 @@ class DalUsuarioCurso
 
     public function selecionaCursosUsuario($idUsuario)
     {
-        $sql = "SELECT * FROM Usuario_Curso where idUsuario = " . $idUsuario;
+        $sql = "SELECT * FROM usuario_curso where idUsuario = " . $idUsuario;
         $res = $this->conexao->query($sql);
         return $res;
     }
 
     public function selecionaCursoUsuario($idUsuario, $idCurso)
     {
-        $sql = "SELECT * FROM Usuario_Curso where idUsuario = " . $idUsuario;
+        $sql = "SELECT * FROM usuario_curso where idUsuario = " . $idUsuario;
         $sql = $sql . " and idCurso = " . $idCurso;
         $res = $this->conexao->query($sql);
 
@@ -39,7 +39,7 @@ class DalUsuarioCurso
 
     public function insere($cursoUsuario)
     {
-        $sql = "INSERT INTO Usuario_Curso (idUsuario , idCurso) VALUES(";
+        $sql = "INSERT INTO usuario_curso (idUsuario , idCurso) VALUES(";
         $sql = $sql . $cursoUsuario->getIdUsuario() . " , ";
         $sql = $sql . $cursoUsuario->getIdCurso() . ");";
         $this->conexao->query($sql);
@@ -47,7 +47,7 @@ class DalUsuarioCurso
 
     public function exclui($usuarioCurso)
     {
-        $sql = "DELETE FROM Usuario_Curso ";
+        $sql = "DELETE FROM usuario_curso ";
         $sql = $sql . "WHERE idUsuario = " . $usuarioCurso->getIdUsuario();
         $sql = $sql . " and idCurso = " . $usuarioCurso->getIdCurso();
         $this->conexao->query($sql);

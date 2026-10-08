@@ -17,7 +17,7 @@ class DalUsuario
 
     function selecionaUsuarios()
     {
-        $sql = "select * from Usuario";
+        $sql = "select * from usuario";
         $res = $this->conexao->query($sql);
 
         return $res;
@@ -25,7 +25,7 @@ class DalUsuario
 
     function selecionaUsuarioPorId($idUsuario)
     {
-        $sql = "select * from Usuario where idUsuario = " . $idUsuario;
+        $sql = "select * from usuario where idUsuario = " . $idUsuario;
         $res = $this->conexao->query($sql);
 
         $usuario = new Usuario();
@@ -40,7 +40,7 @@ class DalUsuario
 
     function autentica($login, $senha)
     {
-        $sql = "select * from Usuario where login = '" . $login . "' and senha = '" . md5($senha) . "'";
+        $sql = "select * from usuario where login = '" . $login . "' and senha = '" . md5($senha) . "'";
         $res = $this->conexao->query($sql);
 
         $usuario = new Usuario();

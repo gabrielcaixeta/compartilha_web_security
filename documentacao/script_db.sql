@@ -6,7 +6,7 @@ CREATE SCHEMA IF NOT EXISTS `compartilha` DEFAULT CHARACTER SET utf8 COLLATE utf
 
 USE `compartilha`;
 
-CREATE  TABLE IF NOT EXISTS `compartilha`.`Usuario` (
+CREATE  TABLE IF NOT EXISTS `compartilha`.`usuario` (
   `idUsuario` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `nome` VARCHAR(45) NOT NULL ,
   `login` VARCHAR(45) NOT NULL ,
@@ -16,7 +16,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
-CREATE  TABLE IF NOT EXISTS `compartilha`.`Canal` (
+CREATE  TABLE IF NOT EXISTS `compartilha`.`canal` (
   `idCanal` INT(11) NOT NULL AUTO_INCREMENT ,
   `descricao` VARCHAR(45) NULL DEFAULT NULL ,
   PRIMARY KEY (`idCanal`) )
@@ -24,7 +24,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
-CREATE  TABLE IF NOT EXISTS `compartilha`.`Curso` (
+CREATE  TABLE IF NOT EXISTS `compartilha`.`curso` (
   `idCurso` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `descricao` VARCHAR(45) NULL DEFAULT NULL ,
   `idCanal` INT(11) NOT NULL ,
@@ -32,14 +32,14 @@ CREATE  TABLE IF NOT EXISTS `compartilha`.`Curso` (
   INDEX `fk_Curso_Canal_idx` (`idCanal` ASC) ,
   CONSTRAINT `fk_Curso_Canal`
     FOREIGN KEY (`idCanal` )
-    REFERENCES `compartilha`.`Canal` (`idCanal` )
+    REFERENCES `compartilha`.`canal` (`idCanal` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 
-CREATE  TABLE IF NOT EXISTS `compartilha`.`Usuario_Curso` (
+CREATE  TABLE IF NOT EXISTS `compartilha`.`usuario_curso` (
   `idUsuario` INT(10) UNSIGNED NOT NULL ,
   `idCurso` INT(10) UNSIGNED NOT NULL ,
   PRIMARY KEY (`idUsuario`, `idCurso`) ,
@@ -47,12 +47,12 @@ CREATE  TABLE IF NOT EXISTS `compartilha`.`Usuario_Curso` (
   INDEX `fk_Usuario_has_Curso_Usuario1_idx` (`idUsuario` ASC) ,
   CONSTRAINT `fk_Usuario_has_Curso_Usuario1`
     FOREIGN KEY (`idUsuario` )
-    REFERENCES `compartilha`.`Usuario` (`idUsuario` )
+    REFERENCES `compartilha`.`usuario` (`idUsuario` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Usuario_has_Curso_Curso1`
     FOREIGN KEY (`idCurso` )
-    REFERENCES `compartilha`.`Curso` (`idCurso` )
+    REFERENCES `compartilha`.`curso` (`idCurso` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
